@@ -2,12 +2,12 @@
 
 ## Initial and Install
 
-### 1, init projects and install webpack and webpack-cli:
+#### 1, Init projects and install webpack and webpack-cli:
 
 	npm init -y
 	npm install webpack webpack-cli --save-dev
 
-### 2, create webpack.config.js file under project folder.
+#### 2, Create webpack.config.js file under project folder.
 ** webpack.config.js **
 
 ```javascript
@@ -27,15 +27,11 @@ module.export = {
 		rules: [ 
 			{
 				test: /\.(png|jpg)$/, 
-				use: [
-					'file-loader'
-				]
+				use: ['file-loader']
 			},
 			{
 				test: /\.css$/, 
-				use: [
-					'style-loader', 'css-loader'
-				]
+				use: ['style-loader', 'css-loader']
 			}
 		]
 	},
@@ -43,5 +39,25 @@ module.export = {
 	plugins: []
 }
 ```
+
+#### 3, On package.json under 'scripts': put 'build: "webpack"
+
+```javascript
+"scripts": {
+  "build": "webpack"
+}
+
+```
+
+#### 4, keyword explaination
+-entry: entry file, everything run begin with
+-output: output path
+-mode: either development or production
+-module: 
+plugins: 
+
+## Loaders
+
+
 
 
