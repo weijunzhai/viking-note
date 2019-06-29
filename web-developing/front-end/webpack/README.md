@@ -150,7 +150,7 @@ module.export = {
 
 ## Production vs Development
 
-mode: production | development;
+mode: production | development;  
 The mode on the config file can be access by code:  process.env.NODE_ENV
 
 
