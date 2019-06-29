@@ -4,8 +4,8 @@
 
 #### 1, Init projects and install webpack and webpack-cli:
 
-	npm init -y
-	npm install webpack webpack-cli --save-dev
+  npm init -y
+  npm install webpack webpack-cli --save-dev
 
 #### 2, Create webpack.config.js file under project folder.
 **webpack.config.js**
@@ -14,29 +14,29 @@
 const path = require('path');
 
 module.export = {
-	entry: './index.js',
+  entry: './index.js',
 
-	output: {
-		filename: 'bundle.js'
-		path: ''
-	},
+  output: {
+    filename: 'bundle.js'
+    path: ''
+  },
 
-	mode: 'development | production',
+  mode: 'development | production',
 
-	module: {
-		rules: [ 
-			{
-				test: /\.(png|jpg)$/, 
-				use: ['file-loader']
-			},
-			{
-				test: /\.css$/, 
-				use: ['style-loader', 'css-loader']
-			}
-		]
-	},
+  module: {
+    rules: [ 
+      {
+        test: /\.(png|jpg)$/, 
+        use: ['file-loader']
+      },
+      {
+        test: /\.css$/, 
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  },
 
-	plugins: []
+  plugins: []
 }
 ```
 
@@ -62,35 +62,35 @@ module.export = {
 
 ```javascript
 module: {
-	rules: [ 
-		{
-			test: /\.(png|jpg)$/, 
-			use: ['file-loader']
-		},
-		{
-			test: /\.css$/, 
-			use: ['style-loader', 'css-loader']
-		},
-		{
-			test: /\.scss$/, 
-			use: ['style-loader', 'css-loader', 'sass-loader']
-		}, 
-		{
-			test: /\.js$/,
-			exclude: /node_modules/,
-			use: {
-				loader: 'babel-loader',
-				options: {
-					presets: [ '@babel/env' ], 
-					plugins: ['transform-class-properties']
-				}
-			}
-		}, 
-		{
-			test: /\.hbs$/,
-			use: ['handlebars-loader']
-		}
-	]
+  rules: [ 
+    {
+      test: /\.(png|jpg)$/, 
+      use: ['file-loader']
+    },
+    {
+      test: /\.css$/, 
+      use: ['style-loader', 'css-loader']
+    },
+    {
+      test: /\.scss$/, 
+      use: ['style-loader', 'css-loader', 'sass-loader']
+    }, 
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: [ '@babel/env' ], 
+          plugins: ['transform-class-properties']
+        }
+      }
+    }, 
+    {
+      test: /\.hbs$/,
+      use: ['handlebars-loader']
+    }
+  ]
 }
 ```
 
