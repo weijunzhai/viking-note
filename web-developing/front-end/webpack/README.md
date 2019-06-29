@@ -8,7 +8,7 @@
 	npm install webpack webpack-cli --save-dev
 
 #### 2, Create webpack.config.js file under project folder.
-** webpack.config.js **
+**webpack.config.js**
 
 ```javascript
 const path = require('path');
@@ -50,7 +50,7 @@ module.export = {
 ```
 
 #### 4, keyword explaination
-- entry: entry file, everything run begin with
+- **entry**: entry file, everything run begin with
 - output: output path
 - mode: either development or production
 - module: 
