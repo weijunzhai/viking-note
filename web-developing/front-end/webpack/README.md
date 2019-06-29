@@ -8,40 +8,40 @@
 	npm install webpack webpack-cli --save-dev
 
 ### 2, create webpack.config.js file under project folder.
-	** webpack.config.js **
+** webpack.config.js **
 
-	```javascript
+```javascript
+const path = require('path');
 
-	const path = require('path');
+module.export = {
+	entry: './index.js',
 
-	module.export = {
-		entry: './index.js',
-		output: {
-			filename: 'bundle.js'
-			path: ''
-		},
-		mode: 'development | production',
-		module: {
-			rules: [ 
-				{
-					test: /\.(png|jpg)$/, 
-					use: [
-						'file-loader'
-					]
-				},
-				{
-					test: /\.css$/, 
-					use: [
-						'style-loader', 'css-loader'
-					]
-				}
+	output: {
+		filename: 'bundle.js'
+		path: ''
+	},
 
-			]
-		},
+	mode: 'development | production',
 
-		plugins: []
-	}
-	
+	module: {
+		rules: [ 
+			{
+				test: /\.(png|jpg)$/, 
+				use: [
+					'file-loader'
+				]
+			},
+			{
+				test: /\.css$/, 
+				use: [
+					'style-loader', 'css-loader'
+				]
+			}
+		]
+	},
 
-	```
+	plugins: []
+}
+```
+
 
