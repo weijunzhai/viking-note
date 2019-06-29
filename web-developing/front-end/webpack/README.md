@@ -14,29 +14,29 @@
 const path = require('path');
 
 module.export = {
-  entry: './index.js',
+    entry: './index.js',
 
-  output: {
-    filename: 'bundle.js'
-    path: ''
-  },
+    output: {
+        filename: 'bundle.js'
+        path: ''
+    },
 
-  mode: 'development | production',
+    mode: 'development | production',
 
-  module: {
-    rules: [ 
-      {
-        test: /\.(png|jpg)$/, 
-        use: ['file-loader']
-      },
-      {
-        test: /\.css$/, 
-        use: ['style-loader', 'css-loader']
-      }
-    ]
-  },
+    module: {
+        rules: [ 
+        {
+            test: /\.(png|jpg)$/, 
+            use: ['file-loader']
+        },
+        {
+            test: /\.css$/, 
+            use: ['style-loader', 'css-loader']
+          }
+        ]
+    },
 
-  plugins: []
+    plugins: []
 }
 ```
 
@@ -44,7 +44,7 @@ module.export = {
 
 ```javascript
 "scripts": {
-  "build": "webpack"
+    "build": "webpack"
 }
 
 ```
@@ -62,35 +62,35 @@ module.export = {
 
 ```javascript
 module: {
-  rules: [ 
-    {
-      test: /\.(png|jpg)$/, 
-      use: ['file-loader']
-    },
-    {
-      test: /\.css$/, 
-      use: ['style-loader', 'css-loader']
-    },
-    {
-      test: /\.scss$/, 
-      use: ['style-loader', 'css-loader', 'sass-loader']
-    }, 
-    {
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: [ '@babel/env' ], 
-          plugins: ['transform-class-properties']
+    rules: [ 
+        {
+            test: /\.(png|jpg)$/, 
+            use: ['file-loader']
+        },
+        {
+            test: /\.css$/, 
+            use: ['style-loader', 'css-loader']
+        },
+        {
+            test: /\.scss$/, 
+            use: ['style-loader', 'css-loader', 'sass-loader']
+        }, 
+        {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: [ '@babel/env' ], 
+                    plugins: ['transform-class-properties']
+                }
+            }
+        }, 
+        {
+            est: /\.hbs$/,
+            use: ['handlebars-loader']
         }
-      }
-    }, 
-    {
-      test: /\.hbs$/,
-      use: ['handlebars-loader']
-    }
-  ]
+    ]
 }
 ```
 
@@ -121,18 +121,18 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.export = {
-	plugins: [
-		new TerserPlugin(),
-		new MiniCssExtractPlugin({
-			filename: 'styles.[contenthash].css'
-		}),
-		new CleanWebpackPlugin(),
-		new HtmlWebpackPlugin({
-			title: "Hello World1",
-			template: "src/index.hbs", 
-			description: "Hi World"
-		})
-	]
+    plugins: [
+        new TerserPlugin(),
+        new MiniCssExtractPlugin({
+            filename: 'styles.[contenthash].css'
+        }),
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            title: "Hello World1",
+            template: "src/index.hbs", 
+            description: "Hi World"
+        })
+    ]
 }
 
 ```
