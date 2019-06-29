@@ -50,10 +50,10 @@ module.export = {
 ```
 
 #### 4, keyword explaination
--entry: entry file, everything run begin with
--output: output path
--mode: either development or production
--module: 
+- entry: entry file, everything run begin with
+- output: output path
+- mode: either development or production
+- module: 
 plugins: 
 
 ## Loaders
