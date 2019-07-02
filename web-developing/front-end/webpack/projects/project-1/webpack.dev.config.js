@@ -5,9 +5,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	entry: './src/index.js',
+	entry: {
+		'hello-world': './src/hello-world.js',
+		'kiwi': './src/kiwi.js'
+	},
 	output: {
-		filename: 'bundle.js',  // do not need to handle browser caching on develop mode.
+		filename: '[name].bundle.js',  // do not need to handle browser caching on develop mode.
 		path: path.resolve(__dirname, './dist'), 
 		publicPath: ''  // the path 
 	}, 
@@ -69,8 +72,17 @@ module.exports = {
 		// }),
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
-			title: "Hello World1",
-			template: "src/index.hbs", 
+			filename: 'hello-world.html',
+			chunks: ['hello-world'],
+			title: "Hello World",
+			template: "src/page-template.hbs", 
+			description: "Hi World"
+		}),
+		new HtmlWebpackPlugin({
+			filename: 'kiwi.html',
+			chunks: ['kiwi'],
+			title: "Kiwi",
+			template: "src/page-template.hbs", 
 			description: "Hi World"
 		})
 	]
