@@ -9,6 +9,7 @@
 
 #### 2, Create webpack.config.js file under project folder.
 **webpack.config.js**
+- we use **require** to import package because webpack does not support ES6
 
 ```javascript
 const path = require('path');
@@ -51,12 +52,25 @@ module.export = {
 
 #### 4, keyword explaination
 - **entry**: entry file, everything run begin with
+    An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
+
+    By default its value is ./src/index.js, but you can specify a different (or multiple entry points) by configuring the entry property in the webpack configuration. 
 - **output**: output path
+    The output property tells webpack where to emit the bundles it creates and how to name these files. It defaults to ./dist/main.js for the main output file and to the ./dist folder for any other generated file.
+
 - **mode**: either development or production
 - **module**: 
 - **plugins**: 
 
 ## Loaders
+    Out of the box, webpack only understands JavaScript and JSON files. Loaders allow webpack to process other types of files and convert them into valid modules that can be consumed by your application and added to the dependency graph.
+
+- **text:**
+    property identifies which file or files should be transformed.
+- **use:**
+    property indicates which loader should be used to do the transforming.
+
+
 
 #### 1, Loader config example
 
@@ -95,8 +109,8 @@ module: {
 ```
 
 #### 2, Keywords Explaination:
-- **rules**:
-- **test**:
+- **rules**: 
+- **test**: 
 - **use**:
 - **exclude**:
 - **loader**:
@@ -111,6 +125,7 @@ module: {
 - **babel-loader**:
 
 ## Plugins:
+    While loaders are used to transform certain types of modules, plugins can be leveraged to perform a wider range of tasks like bundle optimization, asset management and injection of environment variables.
 
 #### 1, Plugins config example
 
