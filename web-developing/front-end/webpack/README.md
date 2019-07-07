@@ -52,11 +52,11 @@ module.export = {
 
 #### 4, keyword explaination
 - **entry**: entry file, everything run begin with
-    An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
+An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
 
-    By default its value is ./src/index.js, but you can specify a different (or multiple entry points) by configuring the entry property in the webpack configuration. 
+By default its value is ./src/index.js, but you can specify a different (or multiple entry points) by configuring the entry property in the webpack configuration. 
 - **output**: output path
-    The output property tells webpack where to emit the bundles it creates and how to name these files. It defaults to ./dist/main.js for the main output file and to the ./dist folder for any other generated file.
+The output property tells webpack where to emit the bundles it creates and how to name these files. It defaults to ./dist/main.js for the main output file and to the ./dist folder for any other generated file.
 
 - **mode**: either development or production
 - **module**: 
